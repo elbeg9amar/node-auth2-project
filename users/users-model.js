@@ -4,6 +4,7 @@ module.exports = {
     get,
     add,
     getById,
+    getBy,
 };
 
 function get() {
@@ -18,6 +19,12 @@ async function add(body) {
     } catch (error) {
         throw error;
     }
+}
+
+function getBy(filter){
+    return db('users')
+        .where(filter)
+        .first()
 }
 
 function getById(id) {
