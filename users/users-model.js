@@ -5,6 +5,7 @@ module.exports = {
     add,
     getById,
     getBy,
+    getByDept,
 };
 
 function get() {
@@ -25,6 +26,10 @@ function getBy(filter){
     return db('users')
         .where(filter)
         .first()
+}
+function getByDept(filter){
+    return db('users as u ')
+        .where(u.department)
 }
 
 function getById(id) {
